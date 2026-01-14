@@ -1,0 +1,152 @@
+.contenedor__tarjeta {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translate(-50%);
+  /* border: 1px solid #9e202053; */
+  z-index: 50;
+
+}
+
+.opciones {
+  /* border: 1px solid #000; */
+  position: fixed;
+
+  /* background: #0795; */
+  h2 {
+    color: #c7ccd1e8;
+    text-align: center;
+    width: 150px;
+  }
+}
+
+.sombra {
+  /* box-shadow: inset 10px 10px 10px #fff; */
+  filter: drop-shadow(5px 4px 3px #000000ab);
+
+  .forma_tarjeta__escritorio {
+    width: 1000px;
+    height: 300px;
+    z-index: 20;
+    background: linear-gradient(45deg, #020837fd, #08188af9);
+    clip-path: path('M 10,300 A 10,10 0 0,1 0,290 L 0,50 A 10,10 0 0,1 10,40 L 150,40 A 10,10 0 0,0 160,30 L 160,10 A 10,10 0 0,1 170,0 L 990,0 A 10,10 0 0,1 1000,10 L 1000,250 A 10,10 0 0,1 990,260 L 910,260 A 10,10 0 0,0 900,270 L 900,290 A 10,10 0 0,1 890,300 Z ');
+    box-shadow: inset 1px 1px 1px #fff1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+
+    /* Para EL contenido de la targeta */
+    .descripcion__tarjeta {
+      flex: 3;
+      align-self: baseline;
+      padding-top: 40px;
+      padding-right: 10px;
+
+      h3 {
+        margin-bottom: 10px;
+        color: #eee;
+      }
+
+      p {
+        font-size: 14px;
+        font-weight: 100;
+        color: #aeacac;
+      }
+
+      h4 {
+        color: #aeacac;
+        font-size: 15px;
+        margin: 10px 0px;
+      }
+
+      ul {
+        /* border: 1px solid #000; */
+        display: flex;
+        justify-content: space-between;
+        width: 35%;
+        margin: 0px 0px 0px 30px;
+
+        li {
+          list-style: none;
+        }
+
+        .icons {
+          stroke: #ddd;
+          stroke-width: 1.5;
+          transition: .1s;
+        }
+
+        .tailwind:hover {
+          stroke: #077ebe
+        }
+
+        .html:hover {
+          stroke: #ed4300;
+        }
+
+        .javascript:hover {
+          stroke: #ebeb1c;
+        }
+
+        .react:hover {
+          stroke: #26a3f1;
+        }
+      }
+
+      .urls_proyecto {
+        width: 50%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 20px auto;
+
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-decoration: none;
+          color: #ddd;
+          transition: .1s;
+
+          /* .github__proyecto:hover,
+          .ir__proyecto:hover {
+            stroke: #ddd;
+            stroke-width: 2;
+          } */
+        }
+
+        a:hover {
+          filter: drop-shadow(3px 3px 2px #000000);
+        }
+      }
+    }
+
+    .conten__imagen__tarjeta {
+      flex: 2;
+
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        display: block;
+        margin: auto;
+      }
+      img:hover {
+        filter: drop-shadow(3px 3px 2px #000000);
+      }
+    }
+  }
+
+  .btn__mas {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    border: 1px solid #ddd1;
+    background: linear-gradient(45deg, #020837ea, #08188af9);
+    color: white;
+    border-radius: 5px 0px 10px 0px;
+    padding: 6px 22px;
+    cursor: pointer;
+  }
+}
