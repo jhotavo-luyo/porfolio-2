@@ -1,23 +1,22 @@
 :root {
     --primary-color: #0a0372;
     --secondary-color: #363795;
+    --primary-color-i: #0208379f;
 }
 *{
     box-sizing: border-box;
     font-family: 'Arial', sans-serif;
+    font-size: 16px;
     margin: 0;
     padding: 0;
-
     line-height: 1.6;
 }
 
 body {
     height: 100vh;;
     max-height: 100%;
-    /* background: radial-gradient(#020837, #000) no-repeat; */
     background:radial-gradient( var(--primary-color), #000000);
     background-size: cover;
-    color: var(--dark-grey);
     overflow: hidden;
 }
 

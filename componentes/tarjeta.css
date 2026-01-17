@@ -1,19 +1,22 @@
 .contenedor__tarjeta {
   position: fixed;
-  bottom: 20px;
+  bottom: 5%;
   left: 50%;
   transform: translate(-50%);
   /* border: 1px solid #9e202053; */
   z-index: 50;
-
+  transition: .5s;
 }
+/* esto en vez de hover es con escroll en pantallas chatas y tbm en celulares chicos con targetas moviles*/
+/* .contenedor__tarjeta:not(:hover){
+  bottom: 500px;
+} */
 
 .opciones {
   /* border: 1px solid #000; */
   position: fixed;
-
-  /* background: #0795; */
   h2 {
+    font-size: 1.3rem;
     color: #c7ccd1e8;
     text-align: center;
     width: 150px;
@@ -49,14 +52,14 @@
       }
 
       p {
-        font-size: 14px;
+        font-size: 0.94rem;
         font-weight: 100;
         color: #aeacac;
       }
 
       h4 {
         color: #aeacac;
-        font-size: 15px;
+        font-size: 0.9rem;
         margin: 10px 0px;
       }
 
@@ -139,14 +142,19 @@
   }
 
   .btn__mas {
+    font-size: 13px;
     position: fixed;
     bottom: 0px;
     right: 0px;
-    border: 1px solid #ddd1;
+    border: 1px solid #fff1;
     background: linear-gradient(45deg, #020837ea, #08188af9);
-    color: white;
+    color: #ddd;
     border-radius: 5px 0px 10px 0px;
-    padding: 6px 22px;
+    padding: 6px 21px;
     cursor: pointer;
   }
 }
+
+/* **************************************************
+_              responsividad 
+****************************************************/

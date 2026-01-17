@@ -1,3 +1,26 @@
+#btn__menu {
+    background: var(--primary-color-i);
+    transform: rotate(135deg);
+    height: 42px;
+    width: 42px;
+    border: 1px solid #eee1;
+    display: none;
+    z-index: 1000;
+    transition: 1.2s ease-in-out;
+    svg {
+        transform: rotate(45deg);
+        stroke-width:1.5;
+        stroke: #eee;
+        scale: 1;
+    }
+}
+#btn__menu:hover {
+    svg {
+        stroke-width:2;
+        scale: 1.2;
+    }
+}
+
 #contacto {
     position: fixed;
     height: 70vh;
@@ -7,15 +30,13 @@
     top: 15vh;
     left: 0;
     z-index: 1000;
-    background: #0208379f;
-    padding: 0;
+    background: var(--primary-color-i);
     display: flex;
     align-items: center;
+    justify-content: center;
     /* overflow: hidden; */
     backdrop-filter: blur(3px);
-    /* clip-path: path("M0 0 L64 10 L64 300 L0 350 Z"); */
-    /*diferencia entre uno y otro*/
-    border: 1px solid #dddddd05;
+    border: 1px solid #eee1;
     clip-path: polygon(0% 0%,
             100% 18%,
             100% 82%,
@@ -25,35 +46,54 @@
 #contacto ul {
     /* border: 2px solid #000; */
     list-style: none;
-    padding: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     height: 70%;
     margin: auto;
-
 }
 
-#contacto ul li{
+#contacto ul li {
     height: 40px;
     width: 40px;
 }
-#contacto ul li svg{/*lo que intento no es una scala sino una inclinacion despues lo corrigo*/
+
+#contacto ul li svg {
+    /*lo que intento no es una scala sino una inclinacion despues lo corrigo*/
     display: block;
     margin: auto;
     margin-top: 4px;
     scale: .9;
-    
-    transition: .1s ;
+
+    transition: .1s;
 }
 
 #contacto ul li:hover {
-    background: radial-gradient(90% 100% at 50% 100%,#38408091, transparent);
+    background: radial-gradient(90% 100% at 50% 100%, #38408091, transparent);
     border-radius: 25px;
     box-shadow: 5px 5px 1px #0002;
-    svg{
-        fill: #ddd1;
+
+    li svg {
         scale: 1;
     }
+}
+
+/* **************************************************
+.            responsividad
+****************************************************/
+/* minilaptos */
+@media (max-width: 1135px) {
+    #btn__menu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        left: 10px;
+        top: 10px;
+    }
+    #contacto{
+        display: none;
+    }
+
 }

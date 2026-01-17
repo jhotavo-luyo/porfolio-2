@@ -1,62 +1,84 @@
 main {
-    max-width: 1280px;
-    min-height: 80vh;
-    margin: 0 auto;
-    display: flex; 
+    height: 100vh;
+    max-height: 100vh;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+    display: flex;
     flex-direction: row;
     align-items: self-start;
-    padding: 10vh 40px 10vh 100px;
-    overflow: hidden;
 }
 
 
 /* *********************************************
 ***              Sobre mi                    ***
 ************************************************ */
-#sobre__mi{
-    flex-shrink:2 ;/*cuanto se reduce*/
+#conten__sobre__mi {
+    flex-shrink: 2;/*cuanto se reduce*/
     flex-grow: 2;
-    flex-basis: 4; /*recorda! .tamaño base*/
+    flex-basis: 4;/*recorda! .tamaño base*/
     min-width: 60%;
+    padding: 5% 0;
+    .sobre_mi{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;    
+        height: calc(90vh - 300px);
+        /* height: 100%; */
+        width: 100%;
+        margin:auto;
+    }
 }
-#sobre__mi h1{
+
+#conten__sobre__mi h1 {
     text-align: left;
     font-size: 40px;
     color: #eee;
 }
-#sobre__mi h2{
+
+#conten__sobre__mi h2 {
     text-align: left;
-    font-size: 20px;
+    font-size: 1.3rem;
     color: #ddd;
 }
-#sobre__mi p{
+
+#conten__sobre__mi p {
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    width: 85%;
+    font-size: 1rem;
+    /* font-size: 1rem; */
+    /* font-size: clamp(12px, 5cqw + 2cqh, 40px); */
     line-height: 24px;
     color: #ddddddc1;
-    width: 85%;
 }
+
 /* *********************************************
 ***                Imagen__dev               ***
 ************************************************ */
-.imagen__dev{
-    
+.imagen__dev {
     flex-shrink: 1;
     flex-grow: 1;
     flex-basis: 1;
-    min-width: 30%;
-    max-height: 100%;
+    min-width: 300px;
+    width: 40%;
+    height: calc(100% - 300px);
     /* background: #494949; */
     /* overflow: hidden; */
     /*-webkit-mask-image: radial-gradient(circle, black 40%, transparent 67%); */
 }
-.imagen__dev img{
+
+.imagen__dev img {
     display: block;
     margin: auto;
+    object-fit: contain;
     height: 100%;
-    width: 90%;
-    min-width: 80px;
-    mask-image: linear-gradient(#000000 40%, transparent);
-    
+    width: 100%;
+    min-width: 10px;
+    mask-image: linear-gradient(#000000 30%, transparent);
 }
+
+/* **************************************************
+_              responsividad
+****************************************************/
