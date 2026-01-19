@@ -13,13 +13,20 @@
 }
 
 body {
-    height: 100vh;;
+    height: 100vh;
     max-height: 100%;
     background:radial-gradient( var(--primary-color), #000000);
     background-size: cover;
     overflow: hidden;
 }
+/* activamos el scroll y */
+@media (max-width: 770px) {
+    body{
+        /* background-size: cover;
+        max-height: 100vh; */
+        overflow: scroll;
+    }
 
-
+}
 
 

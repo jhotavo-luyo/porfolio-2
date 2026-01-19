@@ -7,14 +7,26 @@
   z-index: 50;
   transition: .5s;
 }
+
 /* esto en vez de hover es con escroll en pantallas chatas y tbm en celulares chicos con targetas moviles*/
 /* .contenedor__tarjeta:not(:hover){
   bottom: 500px;
 } */
 
 .opciones {
-  /* border: 1px solid #000; */
+  border-top: 1px solid #ffffff21;
+  border-left: 1px solid #ffffff11;
+  display: block;
+  width: 156px;
+  height: 36px;
   position: fixed;
+  top: 5px;
+  left: 5px;
+  border-radius: 10px 0px 10px 0px;
+  backdrop-filter: blur(2px);
+  background: #557dc20e;
+
+
   h2 {
     font-size: 1.3rem;
     color: #c7ccd1e8;
@@ -26,12 +38,14 @@
 .sombra {
   /* box-shadow: inset 10px 10px 10px #fff; */
   filter: drop-shadow(5px 4px 3px #000000ab);
+  background: transparent;
+
 
   .forma_tarjeta__escritorio {
     width: 1000px;
     height: 300px;
     z-index: 20;
-    background: linear-gradient(45deg, #020837fd, #08188af9);
+    background: linear-gradient(45deg, var(--primary-color-i), #08178a);
     clip-path: path('M 10,300 A 10,10 0 0,1 0,290 L 0,50 A 10,10 0 0,1 10,40 L 150,40 A 10,10 0 0,0 160,30 L 160,10 A 10,10 0 0,1 170,0 L 990,0 A 10,10 0 0,1 1000,10 L 1000,250 A 10,10 0 0,1 990,260 L 910,260 A 10,10 0 0,0 900,270 L 900,290 A 10,10 0 0,1 890,300 Z ');
     box-shadow: inset 1px 1px 1px #fff1;
     display: flex;
@@ -112,11 +126,6 @@
           color: #ddd;
           transition: .1s;
 
-          /* .github__proyecto:hover,
-          .ir__proyecto:hover {
-            stroke: #ddd;
-            stroke-width: 2;
-          } */
         }
 
         a:hover {
@@ -135,8 +144,11 @@
         display: block;
         margin: auto;
       }
+
       img:hover {
         filter: drop-shadow(3px 3px 2px #000000);
+        transform: scale(1.01);
+        transition: .1s;
       }
     }
   }
@@ -147,7 +159,7 @@
     bottom: 0px;
     right: 0px;
     border: 1px solid #fff1;
-    background: linear-gradient(45deg, #020837ea, #08188af9);
+    background: linear-gradient(45deg, var(--primary-color-i), #08178a);
     color: #ddd;
     border-radius: 5px 0px 10px 0px;
     padding: 6px 21px;
@@ -158,3 +170,171 @@
 /* **************************************************
 _              responsividad 
 ****************************************************/
+@media (max-width: 1135px) {
+  .contenedor__tarjeta {
+    bottom: 20px;
+
+    .opciones {
+      display: none;
+    }
+
+    .sombra {
+      .forma_tarjeta__escritorio {
+        width: 750px;
+        height: 230px;
+        background: linear-gradient(45deg, var(--primary-color-i), #08178a9f);
+        clip-path: path('M 10,230 A 10,10 0 0,1 0,220 L 0,10 A 10,10 0 0,1 10,0 L 740,0 A 10,10 0 0,1 750,10 L 750,190 L 655,190 A 10,10 0 0,0 650,195 L 650,230 Z ');
+
+        .descripcion__tarjeta {
+          align-self: center;
+          padding-top: 20px;
+
+          h3 {
+            margin-bottom: 5px;
+            color: #eee;
+            font-size: 0.9rem;
+          }
+
+          p {
+            font-size: 0.8rem;
+            color: #aeacac;
+          }
+
+          h4 {
+            color: #aeacac;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin: 5px 0px;
+          }
+
+          ul {
+            /* border: 1px solid #000; */
+            display: flex;
+            justify-content: space-between;
+            width: 35%;
+            margin: 0px 0px 0px 30px;
+
+            li {
+              list-style: none;
+            }
+
+            .icons {
+              stroke: #ddd;
+              stroke-width: 1.5;
+            }
+
+            .html {
+              animation: skin_html_animado 4s ease infinite;
+            }
+
+            .tailwind {
+              animation: skin_tailwind_animado 4s ease infinite;
+              animation-delay: 1s;
+            }
+
+            .javascript {
+              animation: skin_javascript_animado 4s ease infinite;
+              animation-delay: 2s;
+            }
+
+            .react {
+              animation: skin_react_animado 4s ease infinite;
+              animation-delay: 4s;
+            }
+
+          }
+
+          .urls_proyecto {
+            margin: 10px auto;
+
+            a {
+              font-size: .9rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .contenedor__tarjeta {
+    position: relative;
+    height: fit-content;
+    width: fit-content;
+    top: -30vh;
+    left: 50%;
+    transform: translate(-50%);
+
+    .sombra {
+      .forma_tarjeta__escritorio {
+        width: 600px;
+        height: 276px;
+        background: linear-gradient(45deg, var(--primary-color-i), #08178a9f);
+        clip-path: path('M 10,276 A 10,10 0 0,1 0,266 L 0,10 A 10,10 0 0,1 10,0 L 590,0 A 10,10 0 0,1 600,10 L 600,236 L 505,236 A 10,10 0 0,0 500,240 L 500,276 Z ');
+      }
+    }
+  }
+}
+
+/* **************************************************
+_              animacion 
+****************************************************/
+@keyframes skin_html_animado {
+  0% {
+    stroke: #ddd;
+  }
+
+  50% {
+    stroke: #ed4300;
+  }
+
+  100% {
+    stroke: #ddd;
+  }
+}
+
+@keyframes skin_tailwind_animado {
+  0% {
+    stroke: #ddd;
+  }
+
+  50% {
+    stroke: #077ebe;
+  }
+
+  100% {
+    stroke: #ddd;
+  }
+}
+
+@keyframes skin_javascript_animado {
+  0% {
+    stroke: #ddd;
+  }
+
+  50% {
+    stroke: #ebeb1c;
+  }
+
+  100% {
+    stroke: #ddd;
+  }
+}
+
+@keyframes skin_react_animado {
+  0% {
+    stroke: #ddd;
+
+  }
+
+  50% {
+    stroke: #26a3f1;
+
+  }
+
+  100% {
+    stroke: #ddd;
+
+  }
+}
