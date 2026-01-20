@@ -2,17 +2,14 @@
 // contactos
 // ****************************************************
 const btn__menu = document.querySelector("#btn__menu");
+const btn__principal = document.querySelector(".btn__principal");
 const barraContactos = document.querySelector("#contacto");
-btn__menu.addEventListener("click",()=>{
-    // agregamos estilos
-    if (barraContactos.style.display == "none") {
+const handleContact = ()=>{
+if (barraContactos.style.display === "none" ||btn__principal.style.display === "none") {
         barraContactos.style.display = "flex";
     }else {
         barraContactos.style.display = "none";
     }
-    // preventDefault();
-    
-})
-// ****************************************************
-// Hero
-// ****************************************************
+}
+btn__menu.addEventListener("click",handleContact);
+btn__principal.addEventListener("click",handleContact);
