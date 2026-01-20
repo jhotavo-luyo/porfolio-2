@@ -291,11 +291,10 @@ _              responsividad
     .sombra {
       .forma_tarjeta__escritorio {
         flex-direction: column;
-        width: 300px;
         height: 550px;
+        width: 300px;
         background: linear-gradient(45deg, var(--primary-color-i), #08178a9f);
-        clip-path: none;
-        /* clip-path: path('M 10,276 A 10,10 0 0,1 0,266 L 0,10 A 10,10 0 0,1 10,0 L 590,0 A 10,10 0 0,1 600,10 L 600,236 L 505,236 A 10,10 0 0,0 500,240 L 500,276 Z '); */
+        clip-path: path('M 10,550 A 10,10 0 0,1 0,540 L 0,10 A 10,10 0 0,1 10,0 L 290,0 A 10,10 0 0,1 300,10 L 300,510 L 210,510 A 10,10 0 0,0 200,520 L 200,550 Z ');
       }
     }
   }

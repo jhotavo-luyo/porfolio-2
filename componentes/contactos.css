@@ -4,6 +4,7 @@
     height: 42px;
     width: 42px;
     border: 1px solid #eee1;
+    border-radius: 10px;
     display: none;
     z-index: 1000;
     transition: 1.2s ease-in-out;
@@ -12,12 +13,6 @@
         stroke-width:1.5;
         stroke: #eee;
         scale: 1;
-    }
-}
-#btn__menu:hover {
-    svg {
-        stroke-width:2;
-        scale: 1.2;
     }
 }
 
