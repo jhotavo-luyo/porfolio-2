@@ -3,7 +3,6 @@
   bottom: 5%;
   left: 50%;
   transform: translate(-50%);
-  /* border: 1px solid #9e202053; */
   z-index: 50;
   transition: .5s;
 }
@@ -36,7 +35,6 @@
 }
 
 .sombra {
-  /* box-shadow: inset 10px 10px 10px #fff; */
   filter: drop-shadow(5px 4px 3px #000000ab);
   background: transparent;
 
@@ -53,7 +51,6 @@
     justify-content: space-between;
     padding: 10px;
 
-    /* Para EL contenido de la targeta */
     .descripcion__tarjeta {
       flex: 3;
       align-self: baseline;
