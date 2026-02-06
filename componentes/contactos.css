@@ -8,11 +8,60 @@
     display: none;
     z-index: 1000;
     transition: 1.2s ease-in-out;
+
     svg {
         transform: rotate(45deg);
-        stroke-width:1.5;
+        stroke-width: 1.5;
         stroke: #eee;
         scale: 1;
+    }
+}
+
+.conten__tooltips {
+    position: absolute;
+    height: 70vh;
+    width: fit-content;
+    top: 15vh;
+    left: 70px;
+    min-height: 240px;
+    max-height: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+
+    ul {
+        filter: drop-shadow(0px 0px 1px 5px #03f013);
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: start;
+        height: 70%;
+        /* width: fit-content; */
+    }
+    li{
+        align-content: center;
+        display: block;
+        /* width: 200px; */
+        color: #ffffff;
+        font-weight: bold;
+        font-size: .9rem;
+        height: 40px;
+        filter: drop-shadow(0px 0px 10px  #0281ff);
+        /* background: linear-gradient( transparent , transparent, #000, transparent, transparent); */
+    }
+    .copy_mail{
+        animation: aparecerEffect ease-out .5s;
+    }
+    .ir_linkedin{
+        animation: aparecerEffect ease-out .5s;
+    }
+    .ir_github{
+        animation: aparecerEffect ease-out .5s;
+    }
+    .download_cv{
+        animation: aparecerEffect ease-out .5s;
     }
 }
 
@@ -29,7 +78,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    /* overflow: hidden; */
     backdrop-filter: blur(3px);
     border: 1px solid #eee1;
     clip-path: polygon(0% 0%,
@@ -52,26 +100,25 @@
 #contacto ul li {
     height: 40px;
     width: 40px;
-}
+    border-radius: 50%;
 
-#contacto ul li svg {
-    /*lo que intento no es una scala sino una inclinacion despues lo corrigo*/
-    display: block;
-    margin: auto;
-    margin-top: 4px;
-    scale: .9;
+    svg {
+        /*lo que intento no es una scala sino una inclinacion despues lo corrigo*/
+        display: block;
+        margin: auto;
+        margin-top: 4px;
+        scale: .9;
 
-    transition: .1s;
+        transition: .1s;
+    }
+
 }
 
 #contacto ul li:hover {
-    background: radial-gradient(90% 100% at 50% 100%, #38408091, transparent);
-    border-radius: 25px;
-    box-shadow: 5px 5px 1px #0002;
-
-    li svg {
-        scale: 1;
-    }
+    transform: translateX(10px);
+    transition: .5s;
+    border-radius: 15px;
+    border: 1px solid #ffffff;
 }
 
 /* **************************************************
@@ -87,8 +134,52 @@
         left: 10px;
         top: 10px;
     }
-    #contacto{
+    
+    #contacto {
         display: none;
     }
-
+    
 }
+    /* **************************************************
+    .            animaciones y otros
+    ****************************************************/
+    @keyframes aparecerEffect {
+        0%{
+            opacity: 0;
+            transform: translateX(-300%);
+        }
+        25%{
+            opacity: .1;
+            transform: translateX(10px);
+        }
+        50%{
+            opacity: .2;
+        }
+        75%{
+            opacity: 1;
+            transform: translateX(0px);
+            
+        }
+        100%{
+            opacity: 1;
+            transform: translateX(0px);
+        }
+    }
+
+    .desaparecer{
+        opacity: 0;
+        animation: ease-in-out 1s effectHidden;
+    }
+
+    @keyframes effectHidden{
+        0%{
+            opacity: 0.1;
+        }
+        50%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 0;
+            transform: translateX(100vw);
+        }
+    }
