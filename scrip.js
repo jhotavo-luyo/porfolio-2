@@ -78,6 +78,52 @@ handleEffects(linkedin, efectoLinkedin, "ir_linkedin");
 handleEffects(github, efectoGithub, "ir_github");
 handleEffects(cv, efectoCv, "download_cv");
 
+// ****************************************************
+//  Lógica Touch para Móviles (effect arrastrar)
+// ****************************************************
+const listaContactos = document.querySelector("#contacto ul");
+
+const mapaIconos = new Map([
+    [correo, { tooltip: efectoMail, clase: "copy_mail" }],
+    [linkedin, { tooltip: efectoLinkedin, clase: "ir_linkedin" }],
+    [github, { tooltip: efectoGithub, clase: "ir_github" }],
+    [cv, { tooltip: efectoCv, clase: "download_cv" }]
+]);
+
+const limpiarTooltips = () => {
+    mapaIconos.forEach(({ tooltip, clase }) => {
+        if (tooltip.classList.contains(clase)) {
+            tooltip.classList.replace(clase, "desaparecer");
+            
+        }
+    });
+};
+
+listaContactos.addEventListener("touchmove", (e) => {
+    e.preventDefault();
+    
+    const touch = e.touches[0];
+    const elementoBajoDedo = document.elementFromPoint(touch.clientX, touch.clientY);
+    
+    if (!elementoBajoDedo) return;
+
+    const icono = elementoBajoDedo.closest("li");
+
+    if (icono && mapaIconos.has(icono)) {
+        const { tooltip, clase } = mapaIconos.get(icono);
+        
+        if (tooltip.classList.contains("desaparecer")) {
+            limpiarTooltips();
+            tooltip.classList.replace("desaparecer", clase);
+        }
+    } else {
+        limpiarTooltips();
+    }
+}, { passive: false });
+
+listaContactos.addEventListener("touchend", () => {
+    limpiarTooltips();
+});
 
 
 // ****************************************************
