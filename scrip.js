@@ -23,7 +23,6 @@ const linkedin = document.querySelector(".conten_icon_linkedin");
 const github = document.querySelector(".conten_icon_github")
 const cv = document.querySelector(".conten_icon_cv");
 
-
 correo.addEventListener('click', () => {
     const email = "jhoan.developer@email.com";
     navigator.clipboard.writeText(email).then(() => {
@@ -33,19 +32,11 @@ correo.addEventListener('click', () => {
         alert('No se pudo copiar el correo. Por favor, cópialo manualmente: ' + email);
     });
 });
+linkedin.addEventListener('click', () => window.open("https://www.linkedin.com/in/jhoan-luyo-120433387/", "_blank"));
 
-linkedin.addEventListener('click', () => {
-    // Cambia la URL por la de tu perfil de LinkedIn
-    window.open("https://www.linkedin.com/in/jhoan-luyo-120433387/", "_blank");
-});
-
-github.addEventListener('click', () => {
-    // Cambia la URL por la de tu perfil de GitHub
-    window.open("https://github.com/jhotavo-luyo", "_blank");
-});
+github.addEventListener('click', () =>window.open("https://github.com/jhotavo-luyo", "_blank"));
 
 cv.addEventListener('click', () => {
-    // Cambia la ruta al de tu CV
     const link = document.createElement('a');
     link.href = 'media/cv.pdf';
     link.download = 'cv-Jhoan-Luyo-Frontend.pdf';
@@ -94,7 +85,7 @@ const limpiarTooltips = () => {
     mapaIconos.forEach(({ tooltip, clase }) => {
         if (tooltip.classList.contains(clase)) {
             tooltip.classList.replace(clase, "desaparecer");
-            
+
         }
     });
 };
@@ -121,9 +112,7 @@ listaContactos.addEventListener("touchmove", (e) => {
     }
 }, { passive: false });
 
-listaContactos.addEventListener("touchend", () => {
-    limpiarTooltips();
-});
+listaContactos.addEventListener("touchend", () => limpiarTooltips());
 
 
 // ****************************************************
@@ -133,13 +122,9 @@ const openModalBtn = document.getElementById('btn__modal__info');
 const closeModalBtn = document.getElementById('close-modal-btn');
 const modalOverlay = document.getElementById('modal-overlay');
 
-openModalBtn.addEventListener('click', () => {
-    modalOverlay.classList.add('active');
-});
+openModalBtn.addEventListener('click', () => modalOverlay.classList.add('active'));
 
-closeModalBtn.addEventListener('click', () => {
-    modalOverlay.classList.remove('active');
-});
+closeModalBtn.addEventListener('click', () =>modalOverlay.classList.remove('active'));
 
 modalOverlay.addEventListener('click', (event) => {
     if (event.target === modalOverlay) {
