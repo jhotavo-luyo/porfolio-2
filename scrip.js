@@ -38,7 +38,7 @@ github.addEventListener('click', () =>window.open("https://github.com/jhotavo-lu
 
 cv.addEventListener('click', () => {
     const link = document.createElement('a');
-    link.href = 'media/cv.pdf';
+    link.href = 'media/cv-Jhoan-Luyo-Cordova-frontend';
     link.download = 'cv-Jhoan-Luyo-Frontend.pdf';
     document.body.appendChild(link);
     link.click();
